@@ -1,10 +1,10 @@
-# Substrate Simple Template
+# BOMBchain Substrate Based Blockchain
 
-A simple template to bootstrap a Substrate node with BABE([Nominated Proof of Stake](https://substrate.dev/docs/en/knowledgebase/advanced/consensus#babe)) consensus
+A blockchain configured with BABE([Nominated Proof of Stake](https://substrate.dev/docs/en/knowledgebase/advanced/consensus#babe)) consensus
 
 ## Getting Started
 
-Follow the steps below to get started with the Simple Template.
+Follow the steps below to get started with BOMBchain
 
 ## Rust Setup
 
@@ -40,7 +40,7 @@ Once the project has been built, the following command can be used to explore al
 subcommands:
 
 ```bash
-./target/release/substrate -h
+./target/release/bombd -h
 ```
 
 ## Run
@@ -54,19 +54,19 @@ node.
 This command will start the single-node development chain with persistent state:
 
 ```bash
-./target/release/substrate --dev
+./target/release/bombd --dev
 ```
 
 Purge the development chain's state:
 
 ```bash
-./target/release/substrate purge-chain --dev
+./target/release/bombd purge-chain --dev
 ```
 
 Start the development chain with detailed logging:
 
 ```bash
-RUST_LOG=debug RUST_BACKTRACE=1 ./target/release/substrate -lruntime=debug --dev
+RUST_LOG=debug RUST_BACKTRACE=1 ./target/release/bombd -lruntime=debug --dev
 ```
 
 ### Connect with Polkadot-JS Apps Front-end
@@ -198,18 +198,18 @@ let root_key: AccountId = hex![
 Launch first node with the public key above.
 
 ```bash
-./target/release/substrate --chain staging -d data/validator1 --name validator1 --in-peers 256 --validator --ws-external --rpc-cors all --rpc-methods=unsafe --node-key 0x74a8cfbadb5d2b0178ec124791bfa8346ac3550a4f689923c806428090055277
+./target/release/bombd --chain staging -d data/validator1 --name validator1 --in-peers 256 --validator --ws-external --rpc-cors all --rpc-methods=unsafe --node-key 0x74a8cfbadb5d2b0178ec124791bfa8346ac3550a4f689923c806428090055277
 ```
 
 
 #### Launch other two nodes
 
 ```bash
-./target/release/substrate --chain staging -d data/validator2 --name validator2 --validator --port 30334 --ws-port 9946 --rpc-port 9934 --ws-external --rpc-cors all --rpc-methods=unsafe --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWRm651Kd5GmsLTHJbgX5chQS5npx9ttLgo46UsegCMoNM
+./target/release/bombd --chain staging -d data/validator2 --name validator2 --validator --port 30334 --ws-port 9946 --rpc-port 9934 --ws-external --rpc-cors all --rpc-methods=unsafe --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWRm651Kd5GmsLTHJbgX5chQS5npx9ttLgo46UsegCMoNM
 ```
 
 ```bash
-./target/release/substrate --chain staging -d data/validator3 --name validator3 --validator --port 30335 --ws-port 9947 --rpc-port 9935 --ws-external --rpc-cors all --rpc-methods=unsafe --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWRm651Kd5GmsLTHJbgX5chQS5npx9ttLgo46UsegCMoNM
+./target/release/bombd --chain staging -d data/validator3 --name validator3 --validator --port 30335 --ws-port 9947 --rpc-port 9935 --ws-external --rpc-cors all --rpc-methods=unsafe --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWRm651Kd5GmsLTHJbgX5chQS5npx9ttLgo46UsegCMoNM
 ```
 
 #### Setup node session keys
